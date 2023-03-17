@@ -31,17 +31,20 @@ function preload() {
     this.load.audio('pickup', 'pickup.wav');
     this.load.image('sky', 'sky.png');
     this.load.image('player', 'player.png');
+
+    this.load.on('complete', function () {
+        // Scale down images
+        bananas.getChildren().forEach(function (child) {
+            child.setScale(0.5);
+        });
+        platforms.getChildren().forEach(function (child) {
+            child.setScale(0.5);
+        });
+    }, this);   
+
 }
 
-this.load.on('complete', function () {
-    // Scale down images
-    bananas.getChildren().forEach(function (child) {
-        child.setScale(0.5);
-    });
-    platforms.getChildren().forEach(function (child) {
-        child.setScale(0.5);
-    });
-}, this);
+
 
 function create() {
 
