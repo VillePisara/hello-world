@@ -47,10 +47,9 @@ function create() {
     platforms.create(50, 250, 'platform');
     platforms.create(750, 220, 'platform');
 
-    player = this.physics.add.sprite(100, 450, 'dude');
 
-    player.setBounce(0.2);
-    player.setCollideWorldBounds(true);
+    this.player.setBounce(0.2);
+    this.player.setCollideWorldBounds(true);
 
     this.physics.add.collider(player, platforms);
 
