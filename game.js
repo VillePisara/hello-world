@@ -110,9 +110,15 @@ function update() {
             this.scene.restart();
         }, this);
     }
+
+    if (this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT).isDown) {
+        player.setVelocityX(-160);
+    } else if (this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT).isDown) {
+        player.setVelocityX(160);
+    } else {
+        player.setVelocityX(0);
+    }
 }
-
-
 
 
 
