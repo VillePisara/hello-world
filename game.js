@@ -33,6 +33,16 @@ function preload() {
     this.load.image('player', 'player.png');
 }
 
+this.load.on('complete', function () {
+    // Scale down images
+    bananas.getChildren().forEach(function (child) {
+        child.setScale(0.5);
+    });
+    platforms.getChildren().forEach(function (child) {
+        child.setScale(0.5);
+    });
+}, this);
+
 function create() {
 
     this.player = this.physics.add.sprite(100, 450, 'player');
